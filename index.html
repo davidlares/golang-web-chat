@@ -1,32 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Chat Server with Go</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <title>Chat Server with GO</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-    <script type="text/javascript" src="js/chat_go.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
 </head>
 <body>
   <div class="container">
     <div id="registro">
-        <form id="form_registro">
-            <label>Username:</label>
-            <input type="text" name="user_name" id="user_name">
-            <input type="submit" class="btn btn-primary" value="Registrate">
-        </form>
+          <form id="form">
+              <label>Username</label>
+              <input type="text" name="username" id="username">
+              <input type="submit" class="btn btn-primary text-center" value="Regístrate">
+          </form>
     </div>
     <div id="container_chat">
         <div class="chat">
-            <h1>Chat Facilito  </h1>
-            <div id="chatZone_" name="chatZone"></div>
-                <textarea rows="20" cols="70" class="form-control" id="chat_area"></textarea>
+            <h1 class="text-left">Chat Server with GO</h1>
+            <div id="chatZone" name="chatZone"></div>
+                <textarea rows="20" cols="70" class="form-control" id="area"></textarea>
                 <form id="form_message">
                     <input type="text" class="form-control" id="msg" name="msg" autofocus="true"/>
-                    <input type="submit" class="btn btn-primary" id=send value=Send>
+                    <br><br>
+                    <input type="submit" class="btn btn-primary" id=send value="Send">
                 </form>
-            </div>
-        </div>
-    </div>
+          </div>
+      </div>
+  </div>
 </body>
 </html>

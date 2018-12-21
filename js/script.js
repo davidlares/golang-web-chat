@@ -1,16 +1,16 @@
 $( document ).ready(function() {
 
-	var conexion_final;
-	var user_name;
+	var conn;
+	var username;
 
-	$('#form_registro').on('submit', function(e) {
-		user_name = $('#user_name').val()
+	$('#form').on('submit', function(e) {
+		username = $('#username').val()
 		e.preventDefault();
 		$.ajax({
 			type: "post",
 			url: "/validate",
 			data: {
-				'user_name' : user_name
+				'user_name' : username
 			},
 			success: function(data){
 				validate_response(data)
@@ -19,7 +19,7 @@ $( document ).ready(function() {
 	});
 	function validate_response(data){
 		obj = JSON.parse(data);
-		if (obj.valid === true){
+		if (obj.isvalid === true){
 			create_conection();
 		}else{
 			location.reload();
@@ -27,13 +27,13 @@ $( document ).ready(function() {
 	}
 
 	function create_conection(){
-		var conexion = new WebSocket("ws://localhost:8000/ws/" + user_name);
-		conexion_final = conexion;
-		conexion.onopen = function(){
-			conexion.onmessage = function(response){
+		var connection = new WebSocket("ws://localhost:8000/chat/" + username);
+		conn = connection;
+		connection.onopen = function(){
+			connection.onmessage = function(response){
 				console.log(response)
-				val = $("#chat_area").val();
-		   	$("#chat_area").val(val + "\n" + response.data);
+				val = $("#area").val();
+		   	$("#area").val(val + "\n" + response.data);
 			}
 		}
 		$("#registro").hide();
@@ -42,7 +42,7 @@ $( document ).ready(function() {
 
     $('#form_message').on('submit', function(e) {
     	e.preventDefault();
-    	conexion_final.send($('#msg').val());
+    	conn.send($('#msg').val());
     	$('#msg').val("")
     });
 });
