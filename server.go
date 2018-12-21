@@ -28,12 +28,18 @@ func CreateResponse() Response {
   return Response{"This is json format", true}
 }
 
+func LoadStatic(w http.ResponseWriter, r *http.Request){
+  // serving HTML File
+  http.ServeFile(w,r, "./index.html")
+}
+
 func main(){
   // mux URL Router
   mux := mux.NewRouter()
   // HTTP Route
   mux.HandleFunc("/hello", Hello).Methods("GET")
   mux.HandleFunc("/hello-json", HelloJson).Methods("GET")
+  mux.HandleFunc("/", LoadStatic).Methods("GET")
   // we tell http module to use MUX Routes
   http.Handle("/", mux)
   // message
