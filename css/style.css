@@ -1,3 +1,51 @@
-body {
-  background: red
+
+body{
+ font-family: "Comic Sans MS", Helvetica, Arial, sans-serif;
+ font-size: 14px;
+ line-height: 32px;
+ color: #333333;
+ font-weight: normal;
 }
+#container_chat{
+	display: none;
+}
+#registro{
+	background-color: #eee;
+	padding:10px 15px;
+	width:40%;
+	margin:0 auto;
+	text-align: center;
+	padding-bottom: 60px;
+	margin-top: 10em;
+}
+#registro input, #registro label{
+	display: inline-block;
+	margin-right: -4px;
+}
+#registro input[type=text]{
+	width:80%;
+}
+#registro label{
+	width:20%;text-align:left;
+}
+#registro input[type=submit]{
+	margin-top: 1em;
+	float:right;
+	clear: both;
+	display: block;
+}
+.chat{
+	text-align: center;
+	margin-top: 2em;
+}
+#form_message{
+	margin-top: 2em;
+}
+textarea
+{
+	resize: none;
+	height: 300px;
+}
+#msg{
+	width:80%;
+	display: inline-block;
