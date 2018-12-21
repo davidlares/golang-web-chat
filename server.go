@@ -34,6 +34,10 @@ func LoadStatic(w http.ResponseWriter, r *http.Request){
 }
 
 func main(){
+
+  // handling css
+  cssHandle := http.FileServer(http.Dir("./css"))
+
   // mux URL Router
   mux := mux.NewRouter()
   // HTTP Route
@@ -42,6 +46,8 @@ func main(){
   mux.HandleFunc("/", LoadStatic).Methods("GET")
   // we tell http module to use MUX Routes
   http.Handle("/", mux)
+  // redirecting CSS routes
+  http.Handle("/css/", http.StripPrefix("/css/", cssHandle))
   // message
   log.Println("Server running on port 8000")
   // starting server
