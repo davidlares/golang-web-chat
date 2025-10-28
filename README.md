@@ -1,13 +1,13 @@
-## davidGoChat
+## Golang chat
 
-Desarollo experimental (Websockets y GoLang) de un Chat Server, bajo Gorilla Mux y Gorilla Websockets
+Experimental development (Websockets and GoLang) of a Chat Server, under Gorilla Mux and Gorilla Websockets
 
-## Ejecutar chat
+## Run
 
  go run server.go
 
-## Créditos
-[David E Lares S](https://davidlares.com)
+## Credits
+[David Lares S](https://davidlares.com)
 
-## Licencia
+## License
 [MIT](https://opensource.org/licenses/MIT)
