@@ -2,9 +2,9 @@
 
 Experimental development (Websockets and GoLang) of a Chat Server, under Gorilla Mux and Gorilla Websockets
 
-## Run
+## Usage
 
- go run server.go
+Run: `go run server.go`
 
 ## Credits
 [David Lares S](https://davidlares.com)
